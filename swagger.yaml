@@ -1,0 +1,19 @@
+
+openapi: 3.0.0
+info:
+  title: "BASIC LOGIN WITH FLASK API"
+  description: "An API for logging in"
+  version: "1.0.0"
+
+servers:
+  - url: "/API"
+paths:
+  /login :
+    post:
+      operationId: "USER.returnAdmin"
+      tags:
+        - "USER"
+      summary: "return 0 for no user in db or 1 for user is in db"
+      responses:
+        "200":
+          description: "Successfully read username/password and got reply"
