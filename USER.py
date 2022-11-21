@@ -1,26 +1,34 @@
 #tempDb.py
 #Dictionary format temp db until we decided on postgres or whatever
 from datetime import datetime
-from flask import abort
+import API
 
 def get_timestamp():
     return datetime.now().strftime(("%Y-%m-%d %H:%M:%S"))
     
-def getFormattedUSER():
-    for i in next(USER, None):
-        return (i)
 
 #user info DB in a username:password format
-USER = {
-    "admin":"password",
-    "MICKEY":"MOUSE",
-    "SCOOBY":"DOO",
-    "SPIDER":"MAN"
-}
+USERNAME = ['admin', 'william', 'Elise']
+PASSWORD = ['password', 'pwd1994', 'pass1997']
 
-def getUSER():
-    stringy = USER.get(0)
+def getUSER(username, password): #take username and password as args for USER getter function
+
+    #print out args
+    print(username)
+    print(password)
+    stringy = ""
+
+    for i in USERNAME[len(USERNAME)]: #loop for the length of the list of USERNAME
+        if (username == USERNAME, password == PASSWORD): #if they match in the list
+            break
+        elif():
+            print("Credentials entered are not in our list of users")
+        stringy = USERNAME.get(i)
+    
     print (stringy)
     return stringy
 
-getUSER()
+def SetUSER(username,password): #make a new user    
+    print(username)
+    print(password)
+    return 0

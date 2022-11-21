@@ -6,11 +6,11 @@ info:
   version: "1.0.0"
 
 servers:
-  - url: "/API"
+  - url: "/API/login"
 paths:
   /login :
     post:
-      operationId: "USER.returnAdmin"
+      operationId: "USER.getUSER"
       tags:
         - "USER"
       summary: "return 0 for no user in db or 1 for user is in db"
