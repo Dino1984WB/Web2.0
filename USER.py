@@ -18,8 +18,9 @@ def getUSER(username, password): #take username and password as args for USER ge
     print(password)
     stringy = ""
 
-    for i in USERNAME[len(USERNAME)]: #loop for the length of the list of USERNAME
+    for i in len(USERNAME): #loop for the length of the list of USERNAME
         if (username == USERNAME, password == PASSWORD): #if they match in the list
+            print("You have entered proper credentials: logging in..")
             break
         elif():
             print("Credentials entered are not in our list of users")
@@ -32,3 +33,4 @@ def SetUSER(username,password): #make a new user
     print(username)
     print(password)
     return 0
+

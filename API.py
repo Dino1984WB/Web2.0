@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 from flask_restful import Api, Resource
 from flask import render_template # Remove: import Flask
 import connexion
-import USER as U
+import USER
 
 #json test data
 data = {"username":"admin", "password":"password"} #some json data for tests
@@ -25,6 +25,10 @@ def landingPage():
 
 @app.route("/login")
 def login():
+    username = ""
+    password = ""
+    USER    .getUSER()    
+
     return render_template("login.html")
 
 @app.route("/home")
