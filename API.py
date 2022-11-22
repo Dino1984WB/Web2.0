@@ -14,7 +14,7 @@ querySelect = ('Select * from USER;')
 queryX = ('')
 
 #NEW FLASK APP
-app=Flask(__name__)#Flask app init
+app=Flask(__name__, static_folder='static/', static_url_path='')#Flask app init
 
 
 #app = connexion.App(__name__, specification_dir="./") #new connection to flask app
@@ -39,6 +39,7 @@ def login():
     print(admin)    
     
     return render_template("login.html")
+
 
 @app.route("/home")
 def home():
