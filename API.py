@@ -25,9 +25,11 @@ def landingPage():
 
 @app.route("/login")
 def login():
-    username = ""
-    password = ""
-    USER    .getUSER()    
+    #grab the usrname, passwrod from the post body, plug into getUSER(arg,arg)
+    username = "admin"
+    password = "password"
+
+    USER.getUSER(username, password)    
 
     return render_template("login.html")
 

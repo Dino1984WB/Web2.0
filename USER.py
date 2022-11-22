@@ -1,7 +1,6 @@
 #tempDb.py
 #Dictionary format temp db until we decided on postgres or whatever
 from datetime import datetime
-import API
 
 def get_timestamp():
     return datetime.now().strftime(("%Y-%m-%d %H:%M:%S"))
@@ -18,13 +17,11 @@ def getUSER(username, password): #take username and password as args for USER ge
     print(password)
     stringy = ""
 
-    for i in len(USERNAME): #loop for the length of the list of USERNAME
-        if (username == USERNAME, password == PASSWORD): #if they match in the list
+    for i in range(len(USERNAME)): #loop for the length of the list of USERNAME
+        if (username == USERNAME[i], password == PASSWORD[i]): #if they match in the list
             print("You have entered proper credentials: logging in..")
             break
-        elif():
-            print("Credentials entered are not in our list of users")
-        stringy = USERNAME.get(i)
+    stringy = USERNAME[i]
     
     print (stringy)
     return stringy
