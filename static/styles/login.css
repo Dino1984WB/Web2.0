@@ -48,7 +48,7 @@ h1{
     font-size:1em;
   }
   
-.btn{
+.LoginBtn{
     background:#2ecc71;
     width:125px;
     padding-top:5px;
@@ -65,11 +65,11 @@ h1{
     font-size:0.8em;
   }
   
-.btn:hover{
+.loginBtn:hover{
     background:#2CC06B; 
   }
   
-#btn2{
+#signUpBtn{
     float:left;
     background:#3498db;
     width:125px;  padding-top:5px;
@@ -85,6 +85,6 @@ h1{
     font-size:0.8em;
   }
   
-#btn2:hover{ 
+#signUpBtn:hover{ 
   background:#3594D2; 
   }

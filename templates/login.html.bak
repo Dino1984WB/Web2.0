@@ -1,7 +1,7 @@
 <!-- This is a login form -->
 <html>
 
-<link href= "{{ url_for('static',filename='styles/login.css') }}" rel='stylesheet'>
+<link href='login.css' rel='stylesheet'>
 
 <form method="post" action="/login">
 <div class="box">
@@ -13,7 +13,7 @@
   
 <a href="#"><div id="loginBtn" class="loginBtn">login</div></a> <!-- End Btn -->
 
-<a href="#"><div id="signUpBtn">sign up</div></a> <!-- End Btn2 -->
+<a href="#"><div id="signupBtn">sign up</div></a> <!-- End Btn2 -->
   
 </div> <!-- End Box -->
 
