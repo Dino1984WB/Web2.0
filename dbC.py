@@ -10,4 +10,7 @@ def getConnectionUSERS():
             user='admin',
             password='password')
 
-    return dbConn
+    connFinal = dbConn.cursor()
+
+
+    return connFinal

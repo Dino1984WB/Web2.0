@@ -13,13 +13,12 @@ testData = {"username":"admin", "password":"password"}
 querySelect = ('Select * from USER;')
 queryX = ('')
 
-#app init
-app=Flask(__name__) #new Flask app
+#NEW FLASK APP
+app=Flask(__name__)#Flask app init
 
 
 #app = connexion.App(__name__, specification_dir="./") #new connection to flask app
 #app.add_api("swagger.yaml") #add the api config file yaml
-
 
 
 #routes
@@ -30,9 +29,8 @@ def landingPage():
 
 @app.route("/login")
 def login():
-    conn = dbC.getConnectionUSERS() #make connection to postgres db 'Flask'
-    cur = conn.cursor()
-    cur.execute(querySelect)
+    connC = dbC.getConnectionUSERS() #make connection to postgres db 'Flask'
+    connC.execute(querySelect)
     
     #grab the username, password from the post body, plug into getUSER(arg,arg)
     username = "admin" #make this var equal to the text in the html box on login page, username
