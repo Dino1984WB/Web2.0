@@ -1,19 +1,24 @@
 #API.py Author William Bukowski, usese Flask
+import USER
+import dbC
 from flask import Flask, render_template, request
 from flask_restful import Api, Resource
 from flask import render_template # Remove: import Flask
 import connexion
-import USER
+import psycopg2
+import os
 
 #json test data
-data = {"username":"admin", "password":"password"} #some json data for tests
+testData = {"username":"admin", "password":"password"}
+querySelect = ('Select * from USER;')
+queryX = ('')
 
 #app init
 app=Flask(__name__) #new Flask app
 
-#
-app = connexion.App(__name__, specification_dir="./") #new connection to flask app
-app.add_api("swagger.yaml") #add the api config file yaml
+
+#app = connexion.App(__name__, specification_dir="./") #new connection to flask app
+#app.add_api("swagger.yaml") #add the api config file yaml
 
 
 
@@ -25,12 +30,16 @@ def landingPage():
 
 @app.route("/login")
 def login():
-    #grab the usrname, passwrod from the post body, plug into getUSER(arg,arg)
-    username = "admin"
+    conn = dbC.getConnectionUSERS() #make connection to postgres db 'Flask'
+    cur = conn.cursor()
+    cur.execute(querySelect)
+    
+    #grab the username, password from the post body, plug into getUSER(arg,arg)
+    username = "admin" #make this var equal to the text in the html box on login page, username
     password = "password"
-
-    USER.getUSER(username, password)    
-
+    admin = USER.getUSER(username, password)
+    print(admin)    
+    
     return render_template("login.html")
 
 @app.route("/home")
