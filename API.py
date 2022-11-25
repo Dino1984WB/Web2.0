@@ -1,17 +1,13 @@
 #API.py Author William Bukowski, usese Flask
 import USER
 import dbC
+import dbInit
 from flask import Flask, render_template, request
 from flask_restful import Api, Resource
 from flask import render_template # Remove: import Flask
 import connexion
 import psycopg2
 import os
-
-#json test data
-testData = {"username":"admin", "password":"password"}
-querySelect = ('Select * from USER;')
-queryX = ('')
 
 #NEW FLASK APP
 app=Flask(__name__, static_folder='static/', static_url_path='')#Flask app init
